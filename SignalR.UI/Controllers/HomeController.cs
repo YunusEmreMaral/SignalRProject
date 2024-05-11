@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SignalR.UI.Models;
+using SignalRWebUI.Models;
 using System.Diagnostics;
 
 namespace SignalR.UI.Controllers

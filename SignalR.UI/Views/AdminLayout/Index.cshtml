@@ -1,5 +1,6 @@
-﻿@{
-	Layout = null;
+﻿
+@{
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -12,13 +13,13 @@
 
 		@await Component.InvokeAsync("_LayoutSidebarComponentPartial")
 
-		<div class="main-panel">
-			@RenderBody()
+			<div class="main-panel">
+				@RenderBody()
 
-			@await Component.InvokeAsync("_LayoutFooterComponentPartial")
-		</div>
+				@await Component.InvokeAsync("_LayoutFooterComponentPartial")
+			</div>
 	</div>
-	<!-- Modal -->
+<!-- Modal -->
 	@await Component.InvokeAsync("_LayoutScriptComponentPartial")
 
 </body>
