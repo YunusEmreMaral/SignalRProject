@@ -35,16 +35,16 @@ public class ContactController : ControllerBase
         });
         return Ok("İletişim eklendi");
     }
-    [HttpDelete]
-    public IActionResult DeleteContact(int id)
+	[HttpDelete("{id}")]
+	public IActionResult DeleteContact(int id)
     {
         var values = _contactService.TGetByID(id);
         _contactService.TDelete(values);
         return Ok("İletişim silindi");
     }
 
-    [HttpGet("GetContact")]
-    public IActionResult GetContact(int id)
+	[HttpGet("{id}")]
+	public IActionResult GetContact(int id)
     {
         var values = _contactService.TGetByID(id);
         return Ok(values);

@@ -36,16 +36,16 @@ public class DiscountController : ControllerBase
         });
         return Ok("İndirim eklendi");
     }
-    [HttpDelete]
-    public IActionResult DeleteDiscount(int id)
+	[HttpDelete("{id}")]
+	public IActionResult DeleteDiscount(int id)
     {
         var values = _discountService.TGetByID(id);
         _discountService.TDelete(values);
         return Ok("İndirim silindi.");
     }
 
-    [HttpGet("GetDiscount")]
-    public IActionResult GetDiscount(int id)
+	[HttpGet("{id}")]
+	public IActionResult GetDiscount(int id)
     {
         var values = _discountService.TGetByID(id);
         return Ok(values);

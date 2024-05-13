@@ -38,16 +38,16 @@ public class TestimonialController : ControllerBase
         });
         return Ok("Referans eklendi.");
     }
-    [HttpDelete]
-    public IActionResult DeleteTestimonial(int id)
+	[HttpDelete("{id}")]
+	public IActionResult DeleteTestimonial(int id)
     {
         var values = _testimonialService.TGetByID(id);
         _testimonialService.TDelete(values);
         return Ok("Referans silindi");
     }
 
-    [HttpGet("GetTestimonial")]
-    public IActionResult GetTestimonial(int id)
+	[HttpGet("{id}")]
+	public IActionResult GetTestimonial(int id)
     {
         var values = _testimonialService.TGetByID(id);
         return Ok(values);

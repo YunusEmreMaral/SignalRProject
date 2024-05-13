@@ -36,16 +36,16 @@ public class SocialMediaController : ControllerBase
         });
         return Ok("Sosyal Medya eklendi");
     }
-    [HttpDelete]
-    public IActionResult DeleteSocialMedia(int id)
+	[HttpDelete("{id}")]
+	public IActionResult DeleteSocialMedia(int id)
     {
         var values = _socialMediaService.TGetByID(id);
         _socialMediaService.TDelete(values);
         return Ok("Sosyal Medya silindi");
     }
 
-    [HttpGet("GetSocialMedia")]
-    public IActionResult GetSocialMedia(int id)
+	[HttpGet("{id}")]
+	public IActionResult GetSocialMedia(int id)
     {
         var values = _socialMediaService.TGetByID(id);
         return Ok(values);
